@@ -323,7 +323,8 @@ public class DataBaseAccessDemoActivity extends Activity implements View.OnClick
 //                            myValueFinalString = "     " + valueOfs[0] ;
 //                            myValueFinalString2 = "        " + valueOfs[1] ;
 //                            myValueFinalString3 =  "     " + valueOfs[2];
-                           myValueFinalString = "     " + valueOfs[0] + createSpace(30-(valueOfs[0].length())) + valueOfs[1] + "     " + valueOfs[2];
+                           myValueFinalString = createSpace(5) + valueOfs[0] + createSpace(25-(valueOfs[0].length())) + valueOfs[1] + createSpaceString(valueOfs[1]) + valueOfs[2];
+                           Log.d("Test8Feb", "Array1 == " + valueOfs[1]);
 
                             //myHeadResultString = myStringBuilder(valueOfs[0], valueOfs[1], valueOfs[2]);
 
@@ -366,6 +367,20 @@ public class DataBaseAccessDemoActivity extends Activity implements View.OnClick
 
             return tableLayout_result;
         }//TableLayout doInBackground
+
+        private String createSpaceString(String strWord) {
+
+            String strResult = " ";
+
+            if (strWord != null) {
+                strResult = createSpace(10 - strWord.length());
+            } else {
+                strResult = createSpace(10);
+            }
+
+
+            return strResult;
+        }
 
         private String myStringBuilder(String valueOf, String valueOf1, String valueOf2) {
 
