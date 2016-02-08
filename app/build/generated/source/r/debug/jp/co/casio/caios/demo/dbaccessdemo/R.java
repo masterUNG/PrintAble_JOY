@@ -14,21 +14,23 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int LinearLayout_result=0x7f050007;
-        public static final int button=0x7f05000e;
-        public static final int button_execution=0x7f05000d;
-        public static final int button_finish=0x7f05000b;
-        public static final int checkBox=0x7f050003;
+        public static final int LinearLayout_result=0x7f050009;
+        public static final int button=0x7f050010;
+        public static final int button_execution=0x7f05000f;
+        public static final int button_finish=0x7f05000d;
+        public static final int checkBox=0x7f050005;
         public static final int editText_selection=0x7f050002;
-        public static final int frameLayout1=0x7f05000c;
-        public static final int textView_count=0x7f050006;
-        public static final int textView_result=0x7f050004;
+        public static final int edtDepartmentCode=0x7f050004;
+        public static final int frameLayout1=0x7f05000e;
+        public static final int textView=0x7f050003;
+        public static final int textView_count=0x7f050008;
+        public static final int textView_result=0x7f050006;
         public static final int textView_selection=0x7f050001;
         public static final int textView_table=0x7f050000;
-        public static final int textView_time=0x7f050005;
-        public static final int txtMaster=0x7f050008;
-        public static final int txtQty=0x7f05000a;
-        public static final int txtValue=0x7f050009;
+        public static final int textView_time=0x7f050007;
+        public static final int txtMaster=0x7f05000a;
+        public static final int txtQty=0x7f05000c;
+        public static final int txtValue=0x7f05000b;
     }
     public static final class layout {
         public static final int main=0x7f030000;

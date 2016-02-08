@@ -203,6 +203,7 @@ public class DataBaseAccessDemoActivity extends Activity implements View.OnClick
         private String myHeadResultString, myValueFinalString,myValueFinalString2,myValueFinalString3,
                 finalResulttoPrintString,qtyfinalprintString,amtfinalprintString;
         private boolean bolMyStatus = false;
+        private String departmentString;
 
         public queryTask(Activity activity) {
             mActivity = activity;
@@ -251,9 +252,23 @@ public class DataBaseAccessDemoActivity extends Activity implements View.OnClick
             }
 
 
+            //Department Code
+            EditText departmentEditText = (EditText) mActivity.findViewById(R.id.edtDepartmentCode);
+            departmentString = departmentEditText.getText().toString().trim();
+
+
+
             // EditText รับค่า บิลจากวันเดือนปี
             et = (EditText) mActivity.findViewById(R.id.editText_selection);
-            selection = "BIZDATE= '" + et.getText().toString() + "'";
+//            selection = "BIZDATE= '" + et.getText().toString() + "'";
+
+            if (departmentString.length() == 0) {
+                selection = "BIZDATE= '" + et.getText().toString() + "'";
+            } else {
+                selection = "BIZDATE= '" + et.getText().toString() + "'" + " AND " + "ITEMDEPTCODE= '" + departmentString + "'"   ;
+            }
+
+
             if (selection.length() == 0) {
                 selection = null;
             }
