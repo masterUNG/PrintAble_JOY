@@ -204,6 +204,7 @@ public class DataBaseAccessDemoActivity extends Activity implements View.OnClick
                 finalResulttoPrintString,qtyfinalprintString,amtfinalprintString;
         private boolean bolMyStatus = false;
         private String departmentString;
+        private String[] spinnerDepartStrings;
 
         public queryTask(Activity activity) {
             mActivity = activity;
@@ -283,7 +284,7 @@ public class DataBaseAccessDemoActivity extends Activity implements View.OnClick
 
             // 検索してカーソルを取得する
             long time = 0;
-            Cursor cursor = null;
+            Cursor cursor = null;   // นี่คือ Cursor ที่ Qurery from Selection
             try {
                 // 検索開始時間
                 time = System.currentTimeMillis();
@@ -302,6 +303,17 @@ public class DataBaseAccessDemoActivity extends Activity implements View.OnClick
             if (cursor == null) {
                 return null;
             }
+
+            //-------------------------------------------Start
+            // Read All Department Column
+            //-------------------------------------------Start
+
+
+
+
+
+
+
 
             // 検索結果を表示領域に設定
             int countMax = cursor.getCount();
