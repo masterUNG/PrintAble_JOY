@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Products Report</string>
+
+    <string name="textView_db">Database Name</string>
+    <string name="textView_table">Products Report</string>
+    <string name="textView_projection">Column Name</string>
+    <string name="textView_selection">BIZDATE  (YYYYMMDD)</string>
+    <string name="textView_result">Result</string>
+
+    <string name="button_finish">Close</string>
+    <string name="button_execution">Execute</string>
+
+    <string name="add_time">msec</string>
+    <string name="add_count">Records</string>
+    <string name="message1">Finished</string>
+    <string name="message2">Creating result</string>
+    <string name="print">Print</string>
+</resources>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="D:\MasterUng\PrintAble_JOY-master\app\libs\caiosdevice.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="f19c48c49fe1b47635be79045d519480795d539a">
+        <dex dex="D:\MasterUng\PrintAble_JOY-master\app\build\intermediates\pre-dexed\debug\caiosdevice-b2369ddd00c01fd55e25bfc8d16d3a7b8a279797.jar" />
+    </item>
+    <item
+        jar="D:\MasterUng\PrintAble_JOY-master\app\libs\casioregdevicelibrary.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="db4193a8fd1fde2efe959bc9b41498bd3ac431a6">
+        <dex dex="D:\MasterUng\PrintAble_JOY-master\app\build\intermediates\pre-dexed\debug\casioregdevicelibrary-30ad9cecd7524826ac807ce0e5623fa4b3a7e783.jar" />
+    </item>
+    <item
+        jar="C:\Program Files\Android\android-sdk\extras\android\m2repository\com\android\support\support-v4\18.0.0\support-v4-18.0.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="44ec51e9d395a47aab135e5e1b556c0007442156">
+        <dex dex="D:\MasterUng\PrintAble_JOY-master\app\build\intermediates\pre-dexed\debug\support-v4-18.0.0-c9d4196b68cad8e923cd225736f55524136c378f.jar" />
+    </item>
+
+</items>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/masterUNG/MyWorkspace/Studio_V100/PrintAble_JOY/app/src/main/res/values-th/strings.xml -->
+    <eat-comment/>
+    <string name="add_count">รายการ</string>
+    <string name="add_time">msec</string>
+    <string name="app_name">รายงานสินค้า</string>
+    <string name="button_execution">เรียกดู</string>
+    <string name="button_finish">ปิด</string>
+    <string name="message1">เสร็จสิ้น</string>
+    <string name="message2">Creating result</string>
+    <string name="print">สั่งพิมพ์</string>
+    <string name="textView_db">Database Name</string>
+    <string name="textView_projection">Column Name</string>
+    <string name="textView_result">ผลลัพธ์</string>
+    <string name="textView_selection">วันที่  (YYYYMMDD)</string>
+    <string name="textView_table">รายงานการขายสินค้า</string>
+</resources>
