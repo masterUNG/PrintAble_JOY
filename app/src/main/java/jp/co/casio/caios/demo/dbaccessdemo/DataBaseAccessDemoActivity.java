@@ -103,7 +103,7 @@ public class DataBaseAccessDemoActivity extends Activity implements View.OnClick
 //  testPrintBuildIn(myResult); // Print Head ==============================
 
                 TextView masterTextView = (TextView) findViewById(R.id.txtMaster);
-                String myResult = masterTextView.getText().toString();
+                String myResult = masterTextView.getText().toString();  //Get Date Bill
                 Log.d("28Dec", "myResult  ++++++> " + myResult);
 
 //                PrintHeader("Products Report");
@@ -328,7 +328,8 @@ public class DataBaseAccessDemoActivity extends Activity implements View.OnClick
                             if (i == 2) {
                                 // Log.d("29Dec", myValueFinalString);
                                 itemnameStrings[count - 1] = myValueFinalString;
-                                Log.d("29Dec", "valueStrings[" + Integer.toString(count - 1) + "]" + itemnameStrings[count - 1]);
+                                Log.d("8Feb", "valueStrings[" + Integer.toString(count - 1) + "]" + itemnameStrings[count - 1]);
+                                Log.d("8Feb", "Lengh = " + valueOfs[0].length());
                             }
 
 //                            if (i == 3) {
