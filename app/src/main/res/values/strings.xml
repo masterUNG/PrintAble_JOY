@@ -16,4 +16,7 @@
     <string name="message1">Finished</string>
     <string name="message2">Creating result</string>
     <string name="print">Print</string>
+
+    <string name="checkbox">ทศนิยม</string>
+
 </resources>

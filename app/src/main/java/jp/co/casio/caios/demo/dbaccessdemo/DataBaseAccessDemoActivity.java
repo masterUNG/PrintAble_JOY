@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TableLayout;
@@ -27,6 +28,8 @@ import jp.co.casio.caios.framework.device.lineprintertools.LinePrinterDeviceBase
 
 @SuppressWarnings("ALL")
 public class DataBaseAccessDemoActivity extends Activity implements View.OnClickListener {
+
+    //Explicit
     private Handler handler = new Handler();
     private final static String PROVIDER = "jp.co.casio.caios.framework.database";
     private static final int WC = ViewGroup.LayoutParams.WRAP_CONTENT;
@@ -36,13 +39,16 @@ public class DataBaseAccessDemoActivity extends Activity implements View.OnClick
     private String[] qty;
     private String[] amt;
     private int intItemname, intQty, intAmt;
-
+    private CheckBox myCheckBox;
+    private boolean bolStatusCheck = false;
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+
+        myCheckBox = (CheckBox) findViewById(R.id.checkBox);
 
         Resources resources = getResources();
 
@@ -90,8 +96,15 @@ public class DataBaseAccessDemoActivity extends Activity implements View.OnClick
                 }
                 break;
             case R.id.button_execution:
-                // DB検索
 
+                //เมธอท ตรวจสอบการ CheckBox
+                if (myCheckBox.isChecked()) {
+                    bolStatusCheck = true;
+                } else {
+                    bolStatusCheck = false;
+                }
+
+                Log.d("CheckBox", "Status ==> " + bolStatusCheck);
 
                 new queryTask(this).execute();
                 break;
