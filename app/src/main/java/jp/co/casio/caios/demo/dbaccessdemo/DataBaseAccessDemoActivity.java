@@ -323,20 +323,18 @@ public class DataBaseAccessDemoActivity extends Activity implements View.OnClick
 //                            myValueFinalString = "     " + valueOfs[0] ;
 //                            myValueFinalString2 = "        " + valueOfs[1] ;
 //                            myValueFinalString3 =  "     " + valueOfs[2];
-                            myValueFinalString = "     " + valueOfs[0] + "        " + valueOfs[1] + "     " + valueOfs[2];
+                           myValueFinalString = "     " + valueOfs[0] + createSpace(30-(valueOfs[0].length())) + valueOfs[1] + "     " + valueOfs[2];
+
+                            //myHeadResultString = myStringBuilder(valueOfs[0], valueOfs[1], valueOfs[2]);
 
                             if (i == 2) {
-                                // Log.d("29Dec", myValueFinalString);
+
                                 itemnameStrings[count - 1] = myValueFinalString;
                                 Log.d("8Feb", "valueStrings[" + Integer.toString(count - 1) + "]" + itemnameStrings[count - 1]);
                                 Log.d("8Feb", "Lengh = " + valueOfs[0].length());
                             }
 
-//                            if (i == 3) {
-//                                // Log.d("29Dec", myValueFinalString);
-//                                qtyStrings[count - 1] = myValueFinalString2;
-//                                Log.d("29Dec", "qtyStrings[" + Integer.toString(count - 1) + "]" + qtyStrings[count - 1]);
-//                            }
+//
 //==================================================================================================================================
                             TextView str = new TextView(mActivity);
                             str.setText(s + " ");
@@ -368,6 +366,29 @@ public class DataBaseAccessDemoActivity extends Activity implements View.OnClick
 
             return tableLayout_result;
         }//TableLayout doInBackground
+
+        private String myStringBuilder(String valueOf, String valueOf1, String valueOf2) {
+
+            String strResult = null;
+
+            strResult = createSpace(5) + valueOf + createSpace(30-valueOf.length()) + valueOf1 + createSpace(5);
+
+            return strResult;
+        }
+
+        private String createSpace(int intSpace) {
+
+            String strSpce = null;
+            StringBuilder objStringBuilder = new StringBuilder();
+
+            for (int i=0;i<intSpace;i++) {
+                objStringBuilder.append(" ");
+            }
+
+            strSpce = objStringBuilder.toString();
+
+            return strSpce;
+        }
 
 
         @Override
