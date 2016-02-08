@@ -202,6 +202,7 @@ public class DataBaseAccessDemoActivity extends Activity implements View.OnClick
         private ProgressDialog mProgressDialog = null;
         private String myHeadResultString, myValueFinalString,myValueFinalString2,myValueFinalString3,
                 finalResulttoPrintString,qtyfinalprintString,amtfinalprintString;
+        private boolean bolMyStatus = false;
 
         public queryTask(Activity activity) {
             mActivity = activity;
@@ -243,7 +244,14 @@ public class DataBaseAccessDemoActivity extends Activity implements View.OnClick
             // データベース名 取得
             EditText et;
 
-            // 検索条件 取得
+            //My CheckBox
+           CheckBox myCheckBox = (CheckBox) mActivity.findViewById(R.id.checkBox);
+            if (myCheckBox.isChecked()) {
+                bolMyStatus = true;
+            }
+
+
+            // EditText รับค่า บิลจากวันเดือนปี
             et = (EditText) mActivity.findViewById(R.id.editText_selection);
             selection = "BIZDATE= '" + et.getText().toString() + "'";
             if (selection.length() == 0) {
@@ -393,18 +401,21 @@ public class DataBaseAccessDemoActivity extends Activity implements View.OnClick
         private String checkDecimal(String valueOf2) {
 
             String result = null;
-            Log.d("result1", "valueOf2 == " + valueOf2);
 
-            if (valueOf2 != null) {
-                double douValueOf = Double.parseDouble(valueOf2);
-                double douAnswer = douValueOf / 100;
+            if (bolMyStatus) {
+                if (valueOf2 != null) {
+                    double douValueOf = Double.parseDouble(valueOf2);
+                    double douAnswer = douValueOf / 100;
 
-                //result = Double.toString(douAnswer);
-                result = String.format("%.2f", douAnswer);
+                    //result = Double.toString(douAnswer);
+                    result = String.format("%.2f", douAnswer);
 
-                Log.d("result1", "result == " + result);
+                    Log.d("result1", "result == " + result);
+                } else {
+                    Log.d("result1", "result == " + "Null");
+                }   // if
             } else {
-                Log.d("result1", "result == " + "Null");
+                result = valueOf2;
             }
 
 
