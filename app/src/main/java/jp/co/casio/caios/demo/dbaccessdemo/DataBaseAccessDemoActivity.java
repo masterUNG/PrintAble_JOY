@@ -40,7 +40,7 @@ public class DataBaseAccessDemoActivity extends Activity implements View.OnClick
     private String[] amt;
     private int intItemname, intQty, intAmt;
     private CheckBox myCheckBox;
-    private boolean bolStatusCheck = false;
+    public boolean bolStatusCheck = false;
 
 
     @Override
@@ -97,14 +97,7 @@ public class DataBaseAccessDemoActivity extends Activity implements View.OnClick
                 break;
             case R.id.button_execution:
 
-                //เมธอท ตรวจสอบการ CheckBox
-                if (myCheckBox.isChecked()) {
-                    bolStatusCheck = true;
-                } else {
-                    bolStatusCheck = false;
-                }
-
-                Log.d("CheckBox", "Status ==> " + bolStatusCheck);
+                checkStatusCheckBox();
 
                 new queryTask(this).execute();
                 break;
@@ -117,7 +110,7 @@ public class DataBaseAccessDemoActivity extends Activity implements View.OnClick
 
                 TextView masterTextView = (TextView) findViewById(R.id.txtMaster);
                 String myResult = masterTextView.getText().toString();  //Get Date Bill
-                Log.d("28Dec", "myResult  ++++++> " + myResult);
+                Log.d("myMaster", "myResult  ++++++> " + myResult);
 
 //                PrintHeader("Products Report");
 //                PrintHeader("======================================");
@@ -138,11 +131,22 @@ public class DataBaseAccessDemoActivity extends Activity implements View.OnClick
                         myValue + "\n" +
                         "       ...............................   "); //print data
 
-
-
-
                 break;
         }   // switch
+    }  // onClick
+
+    public boolean checkStatusCheckBox() {
+
+        //เมธอท ตรวจสอบการ CheckBox
+        if (myCheckBox.isChecked()) {
+            bolStatusCheck = true;
+        } else {
+            bolStatusCheck = false;
+        }
+
+        Log.d("CheckBox", "Status ==> " + bolStatusCheck);
+
+        return bolStatusCheck;
     }
 
     private void PrintHeader(String strHead) {
@@ -196,7 +200,8 @@ public class DataBaseAccessDemoActivity extends Activity implements View.OnClick
     private static class queryTask extends AsyncTask<Void, Integer, TableLayout> {
         private Activity mActivity;
         private ProgressDialog mProgressDialog = null;
-        private String myHeadResultString, myValueFinalString,myValueFinalString2,myValueFinalString3, finalResulttoPrintString,qtyfinalprintString,amtfinalprintString;
+        private String myHeadResultString, myValueFinalString,myValueFinalString2,myValueFinalString3,
+                finalResulttoPrintString,qtyfinalprintString,amtfinalprintString;
 
         public queryTask(Activity activity) {
             mActivity = activity;
@@ -333,15 +338,17 @@ public class DataBaseAccessDemoActivity extends Activity implements View.OnClick
                             //   #####################################################
 
                             valueOfs[i] = s;
-//                            myValueFinalString = "     " + valueOfs[0] ;
-//                            myValueFinalString2 = "        " + valueOfs[1] ;
-//                            myValueFinalString3 =  "     " + valueOfs[2];
-                           myValueFinalString = createSpace(5) + valueOfs[0] + createSpace(20-(valueOfs[0].length())) + createSpaceString(valueOfs[1], 5) +
-                                   valueOfs[1] + createSpace(3) + createSpaceString(valueOfs[2], 10) +
-                                   valueOfs[2];
-                           Log.d("Test8Feb", "Array1 == " + valueOfs[1]);
 
-                            //myHeadResultString = myStringBuilder(valueOfs[0], valueOfs[1], valueOfs[2]);
+                            //   #####################################################
+                            //        ค่าที่ต้องการ พิมพ์ ออกบิล
+                            //   #####################################################
+
+                            myValueFinalString = createSpace(5) + valueOfs[0] + createSpace(20 - (valueOfs[0].length())) + createSpaceString(valueOfs[1], 5) +
+                                    valueOfs[1] + createSpace(3) + createSpaceString(checkDecimal(valueOfs[2]), 10) +
+                                    checkDecimal(valueOfs[2]);
+
+
+
 
                             if (i == 2) {
 
@@ -382,6 +389,27 @@ public class DataBaseAccessDemoActivity extends Activity implements View.OnClick
 
             return tableLayout_result;
         }//TableLayout doInBackground
+
+        private String checkDecimal(String valueOf2) {
+
+            String result = null;
+            Log.d("result1", "valueOf2 == " + valueOf2);
+
+            if (valueOf2 != null) {
+                double douValueOf = Double.parseDouble(valueOf2);
+                double douAnswer = douValueOf / 100;
+
+                //result = Double.toString(douAnswer);
+                result = String.format("%.2f", douAnswer);
+
+                Log.d("result1", "result == " + result);
+            } else {
+                Log.d("result1", "result == " + "Null");
+            }
+
+
+            return result;
+        }
 
         private String createSpaceString(String strWord, int intSpace) {
 
