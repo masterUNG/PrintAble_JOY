@@ -323,8 +323,8 @@ public class DataBaseAccessDemoActivity extends Activity implements View.OnClick
 //                            myValueFinalString = "     " + valueOfs[0] ;
 //                            myValueFinalString2 = "        " + valueOfs[1] ;
 //                            myValueFinalString3 =  "     " + valueOfs[2];
-                           myValueFinalString = createSpace(5) + valueOfs[0] + createSpace(25-(valueOfs[0].length())) + createSpaceString(valueOfs[1], 5) +
-                                   valueOfs[1] + createSpaceString(valueOfs[1], 10) +
+                           myValueFinalString = createSpace(5) + valueOfs[0] + createSpace(20-(valueOfs[0].length())) + createSpaceString(valueOfs[1], 5) +
+                                   valueOfs[1] + createSpace(3) + createSpaceString(valueOfs[2], 10) +
                                    valueOfs[2];
                            Log.d("Test8Feb", "Array1 == " + valueOfs[1]);
 
